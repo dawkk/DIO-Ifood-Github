@@ -11,18 +11,25 @@ public class Ex8_Consoantes {
     String[] array = new String[6];
 
     for(int posicaoAtualArray = 0;posicaoAtualArray < numeroMaximoArray; posicaoAtualArray++) {
-      array[posicaoAtualArray] = escolheLetras.nextLine();
-    }
+      String letra = escolheLetras.next();
 
-    for(int posicaoAtualArray = numeroMaximoArray -1;posicaoAtualArray >= 0; posicaoAtualArray--) {
-      if(array[posicaoAtualArray].toLowerCase() != "a" || array[posicaoAtualArray].toLowerCase() != "e" || array[posicaoAtualArray].toLowerCase() != "i" || array[posicaoAtualArray].toLowerCase() != "o" || array[posicaoAtualArray].toLowerCase() != "u") {
+      if(!(letra.equalsIgnoreCase("a") |
+      letra.equalsIgnoreCase("e") |
+      letra.equalsIgnoreCase("i") |
+      letra.equalsIgnoreCase("o") |
+      letra.equalsIgnoreCase("u"))) {
+        array[posicaoAtualArray] = letra;
         contaConsoantes++;
-        System.out.println(array[posicaoAtualArray] + posicaoAtualArray);
-      } else {
-        
       }
     }
+    System.out.println("----------------");
+
+    for(int posicaoAtualArray = contaConsoantes + 1;posicaoAtualArray >= 0; posicaoAtualArray--) {
+      if (array[posicaoAtualArray] != null)
+          System.out.print(array[posicaoAtualArray] + " ");
+    }
     System.out.println("Foram contadas " + contaConsoantes + " Consoantes");
+    System.out.println(array.length);
 
   }
   
